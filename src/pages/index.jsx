@@ -29,9 +29,7 @@ const Home = () => {
           description,
           images: [
             {
-              url: `${seo.canonical}bighead.svg`,
-              width: "350px",
-              height: "350px",
+              url: `${seo.canonical}icon.jpg`,
               alt: "avatar bigheads",
             },
           ],
@@ -47,38 +45,38 @@ const Home = () => {
         py="4"
       >
         <NextImage
-          src="/bighead.svg"
+          src="/icon.jpg"
           width="350"
           height="350"
-          alt="avatar bigheads"
+          className="avatar"
+          alt="avatar lala"
           placeholder="blur"
           blurDataURL="L5I~of#i004mgjw]-4XA00?wL#xu"
           priority
         />
         <Box>
           <Heading as="h1" fontSize="2xl" fontWeight="500" py="2">
-            Hi, I'm John Doe{" "}
+            Hi, I'm TrustYou{" "}
             <span role="img" aria-label="hand">
               👋🏻
             </span>
           </Heading>
           <Heading fontSize={["3xl", "4xl"]} fontWeight="700">
             <Text as="span" color={color}>
-              Building
+              Learn
             </Text>{" "}
-            digital products, Brands, And experience.
+            get experience, and relax.
           </Heading>
           <Text py="4">
-            A{" "}
+            Seorang{" "}
             <Text as="span" fontWeight="600">
-              web designer
+              pelajar
             </Text>{" "}
-            and{" "}
+            dan{" "}
             <Text as="span" fontWeight="600">
-              front-end web developer
+              front end dev
             </Text>{" "}
-            based in the US, I specialize in UI/UX design, Responsive web
-            design, And accessibility.
+            based in bandung.
           </Text>
           <Button
             colorScheme="telegram"
@@ -86,7 +84,13 @@ const Home = () => {
             size="lg"
             fontSize="20px"
           >
-            Get in touch
+            <a
+              href="https://instagram.com/rakarmp_fja"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get in touch
+            </a>
           </Button>
         </Box>
       </Box>

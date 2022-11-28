@@ -1,0 +1,73 @@
+---
+title: "Membuat Loading Di ReactJS"
+publishedAt: "2022-11-28"
+author: "RakaTrust"
+summary: "Membuat Loading Di ReactJS"
+tags: ["react", "javascript"]
+---
+
+Hallo KamuKamu selamat siang, kali ini kita akan membuat loading di react js, pasti untuk menunggu components di render membutuhkan waktu
+nah untuk menghandle itu semua atau bisa kita maksud mempercantik nya kita memakai yang namanya loading agar user tidak bosan saat components di
+render terutama saat jaringan user itu lemot atau tidak stabil, maka dari itu kita bahas cara membuat loading di react js
+let's gooow.
+
+<img
+  src="/reactjs.png"
+  width="500"
+  height="500"
+  alt="alt of the image"
+  title="title of the image"
+/>
+
+Pertama kamu buat project baru dengan mengetikan di terminal:
+
+```jsx:terminal
+npx create-react-app@latest
+
+// Atau bisa juga menggunakan yarn
+
+yarn create react-app@latest
+```
+
+Lalu isikan index.js dengan code berikut :
+
+```jsx:index.js
+import React from "react";
+import ReacrDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const [loading, setLoading] = useState(true)
+// gunakan useEffect untuk menghandle setLoading
+      useEffect(function() {
+        setLoading(false)
+        /* isikan [] karna pada saat useEffect dirender
+           jika kita tidak menggunakan [] useEffect akan
+           dirender berkali-kali, jika kita memakai []
+           useEffect akan dirender tapi hanya 1x */
+      }, [])
+
+root.render(
+    {!loading ? (
+       <React.StrictMode>
+         <App />
+       </React.StrictMode>
+    ): (
+        <p><i>Loading ....</i></p>
+    )}
+)
+```
+
+kita bahas ya, disitu kita buat state untuk mengkondisikan loadingnya
+isi state dengan nilai true karna akan ditampilkan
+pada saat pertama kita membuka web kita, lalu useEffect
+untuk menghandle state loadingnya, setLoading isikan setLoading didalam useEffect karena pada saat
+components selesai dirender maka setLoading
+yang tadinya true akan menjadi false.
+
+Lalu disitu kita buat kondisi loading cara membacanya begini,
+'jika loading sama dengan bernilai true makan tampilkan loading
+jika false maka tampilkan App.js,', sederhananya begitu.
+
+mungkin begitu aja ya, jumpa lagi di tips berikutnya.

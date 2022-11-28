@@ -119,7 +119,7 @@ const Blog = ({ posts }) => {
             fontWeight="500"
           >
             <AlertIcon />
-            No blog post has been found!
+            artikel tidak ditemukan!
           </Alert>
         )}
       </Box>

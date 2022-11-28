@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/imadatyatalah/portfolio-boilerplate-nextjs"
+    "url": "https://github.com/grizz12"
   },
   "scripts": {
     "dev": "next dev",

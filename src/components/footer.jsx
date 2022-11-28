@@ -2,12 +2,18 @@ import { Box, Button, Icon, Link as ChakraLink, Text } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaInstagram, FaCode } from "react-icons/fa";
 
 import { MAX_WIDTH } from "config";
-
-// Fell free to add your social media accounts!
 const socialAccounts = [
-  { icon: FaGithub, path: "https://github.com/", title: "Github" },
-  { icon: FaLinkedin, path: "https://www.linkedin.com/", title: "Linkedin" },
-  { icon: FaInstagram, path: "https://www.instagram.com/", title: "Instagram" },
+  { icon: FaGithub, path: "https://github.com/grizz12", title: "Github" },
+  {
+    icon: FaLinkedin,
+    path: "https://www.linkedin.com/in/raka-abdi-rmp-a0771a245",
+    title: "Linkedin",
+  },
+  {
+    icon: FaInstagram,
+    path: "https://www.instagram.com/rakarmp_fja",
+    title: "Instagram",
+  },
 ];
 
 const Footer = () => {
@@ -46,25 +52,7 @@ const Footer = () => {
             <span role="img" aria-label="red heart">
               ❤️
             </span>
-            ,{" "}
-            <ChakraLink
-              href="https://nextjs.org/"
-              fontWeight="600"
-              _focus={{ outline: "none" }}
-              isExternal
-            >
-              Next.js
-            </ChakraLink>
-            ,{" "}
-            <ChakraLink
-              href="https://chakra-ui.com/"
-              fontWeight="600"
-              _focus={{ outline: "none" }}
-              isExternal
-            >
-              Chakra UI
-            </ChakraLink>
-            , Hosted in{" "}
+            , Crash Course , Hosted in{" "}
             <ChakraLink
               href="http://vercel.com/"
               fontWeight="600"
@@ -77,7 +65,7 @@ const Footer = () => {
         </Box>
         <Box py="2">
           <ChakraLink
-            href="https://github.com/imadatyatalah/nextjs-chakra-ui-portfolio-template"
+            href="https://github.com/grizz12"
             aria-label="source code"
             isExternal
           >
