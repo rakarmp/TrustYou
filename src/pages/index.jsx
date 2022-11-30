@@ -69,11 +69,11 @@ const Home = () => {
           </Heading>
           <Text py="4">
             Seorang{" "}
-            <Text as="span" fontWeight="600">
+            <Text as="span" fontWeight="400">
               pelajar
             </Text>{" "}
             dan{" "}
-            <Text as="span" fontWeight="600">
+            <Text as="span" fontWeight="400">
               front end dev
             </Text>{" "}
             based in bandung.
