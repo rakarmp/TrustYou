@@ -7,10 +7,16 @@ export const seo = {
 
 export const data = [
   {
-    title: "My Blog My Inspiration",
+    title: "I Think",
     description:
-      "Share your inspiration with the world. Write about your journey and share your knowledge with the world.",
+      "Sharing Bacotan Ae Disini Dan Sebenernya Ae Bingung Jadi Ya Begitulah...",
     image: "/frontend-designer.svg",
+  },
+  {
+    title: "Hmmmmm",
+    description:
+      "Dan Pada Kenyataannya Ane Sebenernya Cuman Jago ATM (`Analisis Tiru Modifikasi`), Tapi Yowes.",
+    image: "/image7.svg",
   },
 ];
 

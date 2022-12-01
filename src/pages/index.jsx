@@ -74,7 +74,7 @@ const Home = () => {
             </Text>{" "}
             dan{" "}
             <Text as="span" fontWeight="400">
-              front end dev
+              front end dev berkedok backend Wkwkwk
             </Text>{" "}
             based in bandung.
           </Text>
