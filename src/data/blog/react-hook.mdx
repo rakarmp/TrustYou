@@ -26,7 +26,7 @@ React Hook diperkenalkan pertama kali di acara React Conf 2018 ( 25–26 Oktober
 
 React Hook membuat penulisan component lebih simple dan elegan. Tapi tidak semua yang simple itu mudah di pahami, setidaknya dari pengalamanku sendiri.
 
-## Kenapa sih mesti pake React Hook ?
+### Kenapa sih mesti pake React Hook ?
 
 Setelah melakukan riset yang tekun dan rukun, kesimpulannya adalah table di bawah ini. Perhatikan
 
@@ -48,7 +48,7 @@ Gak ada, gak ada ya…. Baiklah sekian dan terimakasih 👏👏👏
 
 Lanjut lanjut ahhh becanda mulu
 
-## 1. Simplicity — Kemudahan dalam penulisan
+### 1. Simplicity — Kemudahan dalam penulisan
 
 Dari sisi penulisan Function component lebih ringkas di banding class component, ya wajarlah karena fiturnya juga lebih sedikit tidak ada constructor, binding, dan method-method lifecycle seperti componentDidMount, componentDidUpdate dan lain sebagainya. Saya biasanya menulis component baru di function kemudian di refactor ke class ketika ada kebutuhan.
 
@@ -60,7 +60,7 @@ Kenapa ada harus ada 2 cara membuat component ?
 Kenapa tidak 3,4,5,6,7 dan 8 ?
 biar greget kan
 
-## 2. State & Props — Data bagi sang component
+### 2. State & Props — Data bagi sang component
 
 Karena function tidak memiliki state, tak heran jika pada akhir nya function hanya dijadikan sebagai presentational atau tampilan saja. Logic dan state di kelola oleh parent component ( teknik lifting state-up )
 
@@ -81,7 +81,7 @@ Redux tidak peduli child component bentuknya function atau class
 
 Redux bukan all in one solution untuk urusan state management. Terkadang malah terlalu overkill untuk project kecil atau project yang datanya tidak banyak atau kompleks. Redux juga butuh learning curve dan ritual panjang untuk problem yang skalanya kecil.
 
-# 3. Lifecycle — Siklus hidup tumbuhan React
+### 3. Lifecycle — Siklus hidup tumbuhan React
 
 <div align="center">
   <img
@@ -95,7 +95,7 @@ Redux bukan all in one solution untuk urusan state management. Terkadang malah t
 
 Lifecycle di class component menawarkan fleksibilitas dalam membangun komposisi component dan beragam skenario, walaupun memang butuh sedikit usaha belajar untuk memahami cara kerjanya. Sayangnya eksklusifitas ini tidak ada di function.
 
-# 4. Reuse Logic — Logika yang Bispak (Bisa Pakai) lagi
+### 4. Reuse Logic — Logika yang Bispak (Bisa Pakai) lagi
 
 Yang ketawa berarti paham. Bertobatlah 🤔
 
@@ -105,7 +105,7 @@ Sebagai contoh kita punya 100 component yang logic nya sama, hanya UI nya yang b
 
 Ada, problem seperti ini umum terjadi, solusinya bisa menggunakan pola High Order Component dan Render Props. Masalah selesai ? iya, tapi ada potensi masalah baru. Codenya semakin kompleks dan menambah node baru di DOM yang kemungkinan nanti bisa terjebak di Wrapper Hell.
 
-# 5. Pure Component — Component murni
+### 5. Pure Component — Component murni
 
 Ini biasanya di sentuh kalau urusanya ke performance. Kalau aplikasi terasa lambat salah satu yang di tweak ya benda ini. Pure component hampir sama dengan class component bedanya di sini ada method shouldComponentUpdate.
 
@@ -114,7 +114,7 @@ Setiap kali parent di re-render semua child componet juga ikut di re-render, ini
 
 Tapi ingat function component tidak memiliki fitur ini. Sayang sekali saudara-saudara
 
-# 6. Learning Curve — Kurva belajar
+### 6. Learning Curve — Kurva belajar
 
 <div align="center">
   <img
@@ -144,7 +144,7 @@ Kalau sudah nyaman dengan konsep diatas lanjut ke Hook tambahan berikut :
 - useLayoutEffect
 - useDebugValue
 
-# 7. Kesimpulan
+### 7. Kesimpulan
 
 Dan kesimpulannya adalah
 

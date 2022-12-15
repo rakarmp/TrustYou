@@ -9,6 +9,7 @@ import { tagColor } from "@/components/UI/tagColor";
 import { seo } from "config";
 import TagComponent from "@/components/UI/tag";
 import BlogPost from "@/components/blogPost";
+import ButtonAlert from "@/components/Alert";
 
 const options = {
   includeScore: true,
@@ -67,7 +68,6 @@ const Blog = ({ posts }) => {
           url,
         }}
       />
-
       <Box
         as="section"
         fontSize="16px"
@@ -123,6 +123,7 @@ const Blog = ({ posts }) => {
           </Alert>
         )}
       </Box>
+      <ButtonAlert />
     </>
   );
 };
