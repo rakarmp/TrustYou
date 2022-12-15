@@ -1,21 +1,18 @@
 export const seo = {
   title: "TrustYourself - The best way to learn",
-  description:
-    "A Next.js boilerplate for building your portfolio as quick as possible",
+  description: "Daily Blog Share Your Think To World",
   canonical: "https://starter-next-opal.vercel.app/",
 };
 
 export const data = [
   {
-    title: "I Think",
-    description:
-      "Sharing Bacotan Ae Disini Dan Sebenernya Ae Bingung Jadi Ya Begitulah...",
+    title: "Read Write",
+    description: "Sharing Bacotan Kamu Disini Yuk",
     image: "/frontend-designer.svg",
   },
   {
-    title: "Hmmmmm",
-    description:
-      "Dan Pada Kenyataannya Ane Sebenernya Cuman Jago ATM (`Analisis Tiru Modifikasi`), Tapi Yowes.",
+    title: "Pahami Jangan Di Hafal",
+    description: "Dan Pada Kenyataannya Emang Harus Begitu",
     image: "/image7.svg",
   },
 ];
