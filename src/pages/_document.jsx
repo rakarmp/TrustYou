@@ -8,7 +8,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" type="image/png" href="/favicon/icon.png" />
+          <link rel="icon" type="image/jpg" href="icon.jpg" />
           <link rel="manifest" href="/favicon/site.webmanifest" />
         </Head>
         <body>

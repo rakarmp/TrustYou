@@ -6,7 +6,6 @@ export const tagColor = {
   asynchronous: { bgColor: "#1A91DAE2", hover: "#0b7bbcE2" },
   react: { bgColor: "#b2475dE2", hover: "#933346E2" },
   tutorial: { bgColor: "#865DCAE2", hover: "#784cc4E2" },
-  design: { bgColor: "#f11df1E2", hover: "#d313d3E2" },
   html: { bgColor: "#f06529", hover: "#e34c26" },
   nodejs: { bgColor: "#ff7bacE2", hover: "#f7659aE2" },
   ssr: { bgColor: "#77aa7bE2", hover: "#609363E2" },

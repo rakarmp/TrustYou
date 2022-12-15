@@ -54,12 +54,12 @@ const Footer = () => {
             </span>
             , Crash Course , Hosted in{" "}
             <ChakraLink
-              href="http://vercel.com/"
+              href="https://www.netlify.com/"
               fontWeight="600"
               _focus={{ outline: "none" }}
               isExternal
             >
-              Vercel.
+              Netlify.
             </ChakraLink>
           </Text>
         </Box>

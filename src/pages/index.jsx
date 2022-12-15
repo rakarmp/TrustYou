@@ -44,7 +44,7 @@ const Home = () => {
         textAlign="center"
         py="4"
       >
-        <NextImage
+        {/* <NextImage
           src="/icon.jpg"
           width="350"
           height="350"
@@ -53,13 +53,10 @@ const Home = () => {
           placeholder="blur"
           blurDataURL="L5I~of#i004mgjw]-4XA00?wL#xu"
           priority
-        />
+        /> */}
         <Box>
-          <Heading as="h1" fontSize="2xl" fontWeight="500" py="2">
-            Hi, I'm TrustYou{" "}
-            <span role="img" aria-label="hand">
-              👋🏻
-            </span>
+          <Heading as="h1" fontSize="2xl" fontWeight="500" py="4">
+            Hi, I'm TrustYou <span role="img" aria-label="hand"></span>
           </Heading>
           <Heading fontSize={["3xl", "4xl"]} fontWeight="700">
             <Text as="span" color={color}>
@@ -74,7 +71,7 @@ const Home = () => {
             </Text>{" "}
             dan{" "}
             <Text as="span" fontWeight="400">
-              front end dev berkedok backend Wkwkwk
+              solo learn
             </Text>{" "}
             based in bandung.
           </Text>
