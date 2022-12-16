@@ -1,0 +1,161 @@
+---
+title: "Cara Fetch Data Api Di Next JS"
+publishedAt: "2022-12-16"
+author: "RakaTrust"
+summary: "Cara Fetch Dan Konsumsi Api Di NextJS Beserta Metode-metodenya"
+tags: ["nextjs", "asynchronous", "api", "tutorial"]
+---
+
+Halo semua apa kabar kali ini kita belajar bersama cara fetch atau konsumsi data api di nextjs ya
+sedikit flashback nih Next.js adalah framework JavaScript yang dikembangkan oleh Zeit untuk membangun
+aplikasi web dengan server side rendering (SSR). Next.js memungkinkan Anda untuk memfetch data dari API
+dengan mudah menggunakan HTTP client
+seperti axios atau fetch, berikut adalah beberapa ide
+tentang bagaimana Anda dapat memulai:
+
+1. Pasang axios atau fetch pada aplikasi Anda. Anda dapat menggunakan perintah npm install axios atau
+   npm install node-fetch untuk menginstal axios atau fetch pada aplikasi Anda.
+
+2. Buat file konfigurasi axios atau fetch. Anda dapat membuat file konfigurasi axios atau fetch di
+   dalam folder /lib dengan nama client.js atau http.js yang akan digunakan untuk memfetch data dari API.
+
+3. Buat fungsi untuk memfetch data dari API. Anda dapat membuat fungsi untuk memfetch data dari API
+   menggunakan axios atau fetch dengan mengirimkan parameter seperti endpoint API,
+   metode HTTP (seperti GET atau POST), dan data yang akan dikirimkan ke API (jika menggunakan metode POST).
+
+4. Panggil fungsi fetch data di dalam halaman Next.js Anda. Anda dapat memanggil fungsi fetch data di
+   dalam halaman Next.js Anda menggunakan perintah getInitialProps yang akan dipanggil sebelum halaman tersebut
+   di-render. Data yang didapat dari fungsi
+   fetch data dapat disimpan dalam state halaman dan digunakan untuk menampilkan data pada halaman tersebut.
+
+5. Tambahkan error handling. Jangan lupa untuk menambahkan error handling pada fungsi fetch data agar aplikasi
+   tidak crash jika terjadi kesalahan saat memfetch data dari API.
+
+<br />
+<br />
+Berikut adalah contoh sederhana menggunakan axios untuk memfetch data dari API
+di Next.js:
+
+```jsx
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://api.example.com",
+});
+
+export async function getData(endpoint) {
+  try {
+    const res = await api.get(endpoint);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+Anda dapat memanggil fungsi getData di dalam halaman Next.js
+Anda menggunakan perintah getInitialProps seperti ini:
+
+```jsx
+import { getData } from "../lib/client";
+
+function HomePage(props) {
+  return (
+    <div>
+      {props.data.map((item) => (
+        <p key={item.id}>{item.title}</p>
+      ))}
+    </div>
+  );
+}
+
+HomePage.getInitialProps = async () => {
+  const data = await getData("/items");
+  return { data };
+};
+
+export default HomePage;
+```
+
+Pada contoh yang telah saya tuliskan sebelumnya, terdapat beberapa bagian yang perlu dijelaskan lebih lanjut.
+
+- Pada baris pertama, kita mengimport library axios yang telah diinstal sebelumnya pada aplikasi.
+
+- Kemudian, kita membuat objek api yang menggunakan axios.create dan memberikan baseURL yang akan
+  digunakan sebagai basis untuk endpoint API yang akan kita akses.
+
+- Selanjutnya, kita membuat fungsi getData yang menerima parameter endpoint. Fungsi ini akan
+  mengirimkan request ke API menggunakan metode GET dan mengembalikan data yang didapat dari API.
+  Jika terjadi kesalahan saat memfetch data, kita akan menampilkan pesan error di console.
+
+- Pada halaman Next.js, kita mengimport fungsi getData yang telah kita buat sebelumnya dan
+  memanggilnya di dalam getInitialProps. Data yang didapat dari fungsi getData akan disimpan dalam
+  state halaman dan dapat digunakan untuk menampilkan data pada halaman tersebut.
+
+Dengan demikian, kita dapat memfetch data dari API di Next.js dengan menggunakan
+axios atau fetch dan
+menampilkan data tersebut pada halaman web dengan server side rendering.
+
+<br />
+Selain getInitialProps, Next.js juga menyediakan fitur getStaticProps yang dapat
+digunakan untuk memfetch data dari API sebelum halaman di-render. Perbedaan utama
+antara getInitialProps dan getStaticProps adalah bahwa getStaticProps hanya bisa
+digunakan pada halaman statis (static pages) dan akan di-generate sebelum halaman
+tersebut di-deploy.
+<br />
+<br />
+Untuk menggunakan getStaticProps, pertama-tama Anda perlu menambahkan fitur
+exportPathMap pada file next.config.js seperti ini:
+
+```jsx
+module.exports = {
+  exportPathMap: async function () {
+    const paths = {
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+    };
+    return paths;
+  },
+};
+```
+
+Kemudian, Anda dapat menambahkan getStaticProps pada halaman yang akan menggunakan data dari API seperti ini:
+
+```jsx
+import { getData } from "../lib/client";
+
+function HomePage(props) {
+  return (
+    <div>
+      {props.data.map((item) => (
+        <p key={item.id}>{item.title}</p>
+      ))}
+    </div>
+  );
+}
+
+export async function getStaticProps() {
+  const data = await getData("/items");
+  return { props: { data } };
+}
+
+export default HomePage;
+```
+
+Pada contoh di atas, kita memanggil fungsi getData di dalam getStaticProps
+dan menyimpan data yang didapat dari API ke dalam state halaman dengan nama data. Kemudian, data
+tersebut dapat digunakan di dalam halaman dengan mengakses properti props.data.
+
+<br />
+Perlu dicatat bahwa getStaticProps hanya bisa digunakan pada halaman statis, sehingga
+tidak dapat digunakan pada halaman yang membutuhkan data dinamis atau yang dipengaruhi
+oleh parameter URL. Jika Anda membutuhkan fitur tersebut, Anda dapat menggunakan
+getStaticPaths dan getServerSideProps
+
+<br />
+<br />
+Demikian penjelasan mengenai cara memfetch data dari API di Next.js menggunakan
+HTTP client seperti axios atau fetch. Kami harap artikel ini dapat membantu Anda
+dalam membangun aplikasi web dengan Next.js. Jika Anda masih memiliki pertanyaan
+atau kurang memahami sesuatu, jangan ragu untuk bertanya kembali. Saya akan
+dengan senang hati menjawab pertanyaan Anda. Selamat mencoba!
