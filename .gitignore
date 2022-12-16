@@ -35,3 +35,6 @@ yarn-error.log*
 
 # vscode
 /.vscode
+
+# markdown contoh
+/src/data/blog/markdown-examples.mdx
