@@ -9,14 +9,26 @@ import { NextSeo } from "next-seo";
 import NextImage from "next/image";
 
 import { seo, data } from "config";
+import { useState } from "react";
+import { useEffect } from "react";
+import HandleWait from "@/components/loading";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const color = useColorModeValue("telegram.500", "telegram.400");
 
   const isOdd = (num) => num % 2;
 
   const title = "Home";
   const description = seo.description;
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <HandleWait />;
+  }
 
   return (
     <>
