@@ -9,4 +9,5 @@ export const tagColor = {
   html: { bgColor: "#f06529", hover: "#e34c26" },
   ssr: { bgColor: "#77aa7bE2", hover: "#609363E2" },
   markdown: { bgColor: "#168aad", hover: "#1a759f" },
+  daily: { bgColor: "#8700FF", hover: "#A948FF" },
 };
