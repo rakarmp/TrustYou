@@ -6,14 +6,9 @@ export const seo = {
 
 export const data = [
   {
-    title: "Read Write",
-    description: "Sharing Bacotan Kamu Disini Yuk",
+    title: "TrustYourSelf",
+    description: "Daily Blog Share Your Think To World",
     image: "/frontend-designer.svg",
-  },
-  {
-    title: "Pahami Jangan Di Hafal",
-    description: "Dan Pada Kenyataannya Emang Harus Begitu",
-    image: "/image7.svg",
   },
 ];
 
