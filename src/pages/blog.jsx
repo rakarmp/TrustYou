@@ -9,7 +9,7 @@ import { tagColor } from "@/components/UI/tagColor";
 import { seo } from "config";
 import TagComponent from "@/components/UI/tag";
 import BlogPost from "@/components/blogPost";
-import ButtonAlert from "@/components/Alert";
+import HandleWait from "@/components/loading";
 
 const options = {
   includeScore: true,
@@ -25,6 +25,7 @@ const Blog = ({ posts }) => {
 
   const [blogPost, setBlogPost] = useState(posts);
   const [searchValue, setSearchValue] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const filteredPosts = (tag) => {
     const blogResults = posts.filter((post) => post.tags.includes(tag));
@@ -51,6 +52,14 @@ const Blog = ({ posts }) => {
       filteredPosts(router.query?.tag);
     }
   }, [router]);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <HandleWait />;
+  }
 
   const title = "Blog";
   const description = seo.description;
@@ -123,7 +132,6 @@ const Blog = ({ posts }) => {
           </Alert>
         )}
       </Box>
-      <ButtonAlert />
     </>
   );
 };
