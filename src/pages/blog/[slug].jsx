@@ -19,9 +19,13 @@ import { seo } from "config";
 import { tagColor } from "@/components/UI/tagColor";
 import MDXComponents from "@/components/MDXComponents";
 import TagComponent from "@/components/UI/tag";
+import { useState } from "react";
+import { useEffect } from "react";
+import HandleWait from "@/components/loading";
 
 const BlogPost = ({ mdxSource, frontMatter }) => {
   const { push } = useRouter();
+  const [loading, setLoading] = useState(true);
 
   const color = useColorModeValue("gray.700", "gray.400");
 
@@ -32,6 +36,14 @@ const BlogPost = ({ mdxSource, frontMatter }) => {
   const title = frontMatter.title;
   const description = frontMatter.summary;
   const url = `${seo.canonical}blog/${frontMatter.slug}`;
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <HandleWait />;
+  }
 
   return (
     <>
@@ -96,18 +108,18 @@ const BlogPost = ({ mdxSource, frontMatter }) => {
           <Box as="article">
             {content}
 
-            {/* <Text fontWeight="500" py="6">
+            <Text fontWeight="500" py="6">
               <ChakraLink
-                href={`https://github.com/imadatyatalah/nextjs-chakra-ui-portfolio-template/blob/main/src/data/blog/${frontMatter.slug}.mdx`}
+                href={`https://github.com/grizz12/TrustYou/blob/main/src/data/blog/${frontMatter.slug}.mdx`}
                 d="flex"
                 alignItems="flex-end"
                 _focus={{ outline: "none" }}
                 isExternal
               >
                 <Icon as={MdEdit} w={6} h={6} marginRight="2" />
-                Edit this page on github.
+                Edit page ini di github.
               </ChakraLink>
-            </Text> */}
+            </Text>
           </Box>
         </Box>
       </MDXProvider>
