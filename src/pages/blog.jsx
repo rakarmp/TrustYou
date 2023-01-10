@@ -54,7 +54,9 @@ const Blog = ({ posts }) => {
   }, [router]);
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }, []);
 
   if (loading) {

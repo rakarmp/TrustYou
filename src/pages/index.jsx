@@ -23,7 +23,9 @@ const Home = () => {
   const description = seo.description;
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }, []);
 
   if (loading) {

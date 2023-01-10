@@ -1,6 +1,20 @@
+import HandleWait from "@/components/loading";
 import { Center, Heading, Avatar, AvatarGroup } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
 export default function About() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  });
+
+  if (loading) {
+    return <HandleWait />;
+  }
+
   return (
     <div>
       <Center py={5}>

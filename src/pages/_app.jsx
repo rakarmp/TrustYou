@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }) => (
 
     <ChakraProvider theme={theme}>
       <Layout>
-        <Component {...pageProps} />
+        <Component {...pageProps} />  
       </Layout>
     </ChakraProvider>
   </>
