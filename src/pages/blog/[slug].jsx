@@ -38,7 +38,9 @@ const BlogPost = ({ mdxSource, frontMatter }) => {
   const url = `${seo.canonical}blog/${frontMatter.slug}`;
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   if (loading) {
