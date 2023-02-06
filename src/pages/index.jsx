@@ -21,7 +21,7 @@ const Home = () => {
 
   const title = "Home";
   const description = seo.description;
-
+  
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
