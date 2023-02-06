@@ -19,7 +19,7 @@ export default function About() {
     <div>
       <Center py={5}>
         <Heading as="h3" size="md">
-          Author By{" "}
+          Author By
         </Heading>
       </Center>
       <Center py={5}>
