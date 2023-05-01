@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "next-sitemap": "^2.5.28",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.8"
   }
 }
