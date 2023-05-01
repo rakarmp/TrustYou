@@ -21,7 +21,7 @@
     "@emotion/styled": "^11",
     "@fontsource/poppins": "^4.5.1",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^13.1.6",
+    "@next/mdx": "^13.3.2",
     "dayjs": "^1.11.7",
     "framer-motion": "^6",
     "fuse.js": "^6.5.3",
